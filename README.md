@@ -28,7 +28,31 @@ git clone git@github.com:udacity/CppND-Route-Planning-Project.git --recurse-subm
   * Windows: recommend using [MinGW](http://www.mingw.org/)
 * IO2D
   * Installation instructions for all operating systems can be found [here](https://github.com/cpp-io2d/P0267_RefImpl/blob/master/BUILDING.md)
+  * The way the library is being called from `CMakeLists.txt` can also be found [here](https://github.com/cpp-io2d/P0267_RefImpl/blob/master/CONSUMING.md)
   * This library must be built in a place where CMake `find_package` will be able to find it
+
+> ### Instalation Notes:
+> This project was executed on Ubuntu 20.04.3 LTS Focal Fossa. In the following we describe the step-by-step procedure for installing IO2D:
+> ```
+> sudo apt update
+> sudo apt install build-essential
+> sudo apt install cmake
+> sudo apt install libcairo2-dev
+> sudo apt install libgraphicsmagick1-dev
+> sudo apt install libpng-dev
+> 
+> git clone --recurse-submodules https://github.com/cpp-io2d/P0267_RefImpl
+> cd P0267_RefImpl
+> mkdir Debug
+> cd Debug
+> cmake --config Debug "-DCMAKE_BUILD_TYPE=Debug" ..
+> cmake --build .
+>
+> sudo make install
+> ```
+> A lot of this is explained in the `P0267_RefImpl` repository documentation. However, the key point is to run `sudo make install` at the end.<br> 
+> For other OS please refer to the following [issue](https://github.com/udacity/CppND-Route-Planning-Project/issues/1#issuecomment-520659977).<br> 
+> Credit goes to the post made by [suljaxm](https://github.com/suljaxm).<br><br>
 
 ## Compiling and Running
 
