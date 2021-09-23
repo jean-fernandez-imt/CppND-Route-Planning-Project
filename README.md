@@ -52,7 +52,7 @@ git clone git@github.com:udacity/CppND-Route-Planning-Project.git --recurse-subm
 > ```
 > A lot of this is explained in the `P0267_RefImpl` repository documentation. However, the key point is to run `sudo make install` at the end.<br> 
 > For other OS please refer to the following [issue](https://github.com/udacity/CppND-Route-Planning-Project/issues/1#issuecomment-520659977).<br> 
-> Credit goes to the post made by [suljaxm](https://github.com/suljaxm).<br><br>
+> Credit goes to the post made by [suljaxm](https://github.com/suljaxm).
 
 ## Compiling and Running
 
