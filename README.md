@@ -1,8 +1,10 @@
 # Route Planning Project
 
-This repo contains the starter code for the Route Planning project.
+This repo contains our implementation for the Route Planning project, the first of Udacity's C++ Nanodegree, focused on the Foundations of the language.
 
 <img src="map.png" width="600" height="450" />
+
+Some of the challenges we faced were getting used to C++ syntax and mechanics, such as vector objects, or pointers usage and notation.
 
 ## Cloning
 
