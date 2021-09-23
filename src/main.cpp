@@ -79,6 +79,9 @@ int main(int argc, const char **argv)
         else
             osm_data = std::move(*data);
     }
+
+    std::cout << std::endl << "|--- A* Search Algorithm ---|" << std::endl;
+    std::cout << "Valid input range: [0, 100]" << std::endl << std::endl;
     
     // User Input.
     float start_x = getInput("initial X");
