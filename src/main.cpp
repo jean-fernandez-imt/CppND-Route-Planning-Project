@@ -46,9 +46,11 @@ static float getInput(std::string desired) {
         std::cin >> input;
 
         if (checkRange(input)) {
-            return input;
+            valid = true;
         }
     }
+
+    return input;
 }
 
 int main(int argc, const char **argv)
