@@ -47,6 +47,8 @@ static float getInput(std::string desired) {
 
         if (checkRange(input)) {
             valid = true;
+        } else {
+            std::cout << "Invalid input. Try Again!" << std::endl;
         }
     }
 
