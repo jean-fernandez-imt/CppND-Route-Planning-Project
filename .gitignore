@@ -12,5 +12,4 @@ bin/
 lib/
 
 # Settings
-.github/**
-.vscode/**
+.vscode/
