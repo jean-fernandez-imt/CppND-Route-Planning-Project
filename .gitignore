@@ -1,11 +1,16 @@
+# Compile objects
 *.swp
 *.osm
 !map.osm
 *.o
 draw.cpp
 test.cpp
+
+# Build files
 build/
 bin/
 lib/
+
+# Settings
 .github/**
 .vscode/**
