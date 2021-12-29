@@ -3,7 +3,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <typeinfo>
 #include <io2d.h>
 #include "route_model.h"
 #include "render.h"
@@ -28,42 +27,47 @@ static std::optional<std::vector<std::byte>> ReadFile(const std::string &path)
     return std::move(contents);
 }
 
-// User input handlers
-static bool checkRange(const float value) {
-    if (value >= 0 && value <= 100) {
+
+bool CheckRange(int user_input, int min_val, int max_val) 
+{
+    if (user_input >= min_val && user_input <= max_val) 
+    {
         return true;
+    } 
+    else 
+    {
+        return false;
     }
-    
-    return false;
 }
 
-static float getInput(std::string desired) {
-    float input = 0;
-    bool valid = false;
 
-    while (!valid) {
-        std::cout << "Enter " + desired + " coordinate: ";
-        std::cin >> input;
+int GetInput() 
+{
+    int user_input;
+    std::cout << "Enter value: ";
+    std::cin >> user_input;
 
-        if (checkRange(input)) {
-            valid = true;
-        } else {
-            std::cout << "Invalid input. Try Again!" << std::endl;
-        }
+    while (CheckRange(user_input, 0, 100) == false) {
+        std::cout << "Value not in [0, 100] range. Try again!" << std::endl;
+        std::cout << "Enter value: ";
+        std::cin >> user_input;
     }
 
-    return input;
+    return user_input;
 }
+
 
 int main(int argc, const char **argv)
 {    
     std::string osm_data_file = "";
-    if( argc > 1 ) {
+    if( argc > 1 ) 
+    {
         for( int i = 1; i < argc; ++i )
             if( std::string_view{argv[i]} == "-f" && ++i < argc )
                 osm_data_file = argv[i];
     }
-    else {
+    else 
+    {
         std::cout << "To specify a map file use the following format: " << std::endl;
         std::cout << "Usage: [executable] [-f filename.osm]" << std::endl;
         osm_data_file = "../map.osm";
@@ -71,7 +75,8 @@ int main(int argc, const char **argv)
     
     std::vector<std::byte> osm_data;
  
-    if( osm_data.empty() && !osm_data_file.empty() ) {
+    if( osm_data.empty() && !osm_data_file.empty() ) 
+    {
         std::cout << "Reading OpenStreetMap data from the following file: " <<  osm_data_file << std::endl;
         auto data = ReadFile(osm_data_file);
         if( !data )
@@ -79,16 +84,18 @@ int main(int argc, const char **argv)
         else
             osm_data = std::move(*data);
     }
+    
+    float start_x, start_y, end_x, end_y;
 
-    std::cout << std::endl << "|--- A* Search Algorithm ---|" << std::endl;
-    std::cout << "Valid input range: [0, 100]" << std::endl << std::endl;
-    
-    // User Input.
-    float start_x = getInput("initial X");
-    float start_y = getInput("initial Y");
-    float end_x = getInput("target X");
-    float end_y = getInput("target Y");
-    
+    std::cout << "Start X coordinate: " << std::endl;
+    start_x = GetInput();
+    std::cout << "Start Y coordinate: " << std::endl;
+    start_y = GetInput();
+    std::cout << "Target X coordinate: " << std::endl;
+    end_x = GetInput();
+    std::cout << "Target Y coordinate: " << std::endl;
+    end_y = GetInput();
+
     // Build Model.
     RouteModel model{osm_data};
 
