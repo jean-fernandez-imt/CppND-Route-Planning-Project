@@ -1,4 +1,4 @@
-# Route Planning Project
+# Route Planning Project 🛣️
 
 This repo contains our implementation for the Route Planning Project, the first of Udacity's C++ Nanodegree, focused on the Foundations of the language.
 
@@ -6,7 +6,7 @@ This repo contains our implementation for the Route Planning Project, the first 
 
 Some of the challenges we faced were getting used to C++ syntax and mechanics, such as vector objects, or pointers usage and notation. The original repository can be found [here](https://github.com/udacity/CppND-Route-Planning-Project).
 
-## Cloning
+## Cloning 👣
 
 When cloning this project, be sure to use the `--recurse-submodules` flag. Using HTTPS:
 ```
@@ -17,7 +17,7 @@ or with SSH:
 git clone git@github.com:udacity/CppND-Route-Planning-Project.git --recurse-submodules
 ```
 
-## Dependencies for Running Locally
+## Dependencies 🧩
 * cmake >= 3.11.3
   * All OSes: [click here for installation instructions](https://cmake.org/install/)
 * make >= 4.1 (Linux, Mac), 3.81 (Windows)
@@ -56,7 +56,7 @@ git clone git@github.com:udacity/CppND-Route-Planning-Project.git --recurse-subm
 > For other OS please refer to the following [issue](https://github.com/udacity/CppND-Route-Planning-Project/issues/1#issuecomment-520659977).<br> 
 > Credit goes to the post made by [suljaxm](https://github.com/suljaxm).
 
-## Compiling and Running
+## Compiling and Running 🏃
 
 ### Compiling
 To compile the project, first, create a `build` directory and change to that directory:
@@ -78,7 +78,7 @@ Or to specify a map file:
 ./OSM_A_star_search -f ../<your_osm_file.osm>
 ```
 
-## Testing
+## Testing 🧪
 
 The testing executable is also placed in the `build` directory. From within `build`, you can run the unit tests as follows:
 ```
